@@ -1,0 +1,62 @@
+<app-header></app-header>
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-black abs-center">
+
+
+
+                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+                    <div class="login-box">
+                        <div class="card shadow p-3 mb-5  rounded">
+                            <div class="card-body">
+                                <form>
+                                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start ">
+                                        <p class="lead fw-normal mb-0 me-3 text-white">Sign Up</p>
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
+                                          <i class="fab fa-facebook-f"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
+                                          <i class="fab fa-twitter"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle">
+                                          <i class="fab fa-linkedin-in"></i>
+                                        </button>
+                                    </div>
+                                    <div class="user-box mt-5">
+                                        <input [(ngModel)]="user.correo" type="email" name="correo" required="">
+                                        <label>Correo</label>
+                                    </div>
+
+                                    <div class="user-box ">
+                                        <input [(ngModel)]="user.nom_usuario" type="text" name="nom_usuario" required="">
+                                        <label>Nombre Completo</label>
+                                    </div>
+                                    <div class="user-box">
+                                        <input [(ngModel)]="user.clave" type="password" name="clave" required="">
+                                        <label>Contraseña</label>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <a (click)="registro()" type="button">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span> Enviar
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-sm-6 text-black abs-center2">
+                <!-- <img src="https://blog.wplay.co/wp-content/uploads/2019/07/WhatsApp-Image-2019-07-08-at-4.51.43-PM.jpeg" alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">-->
+            </div>
+        </div>
+    </div>
+</section>

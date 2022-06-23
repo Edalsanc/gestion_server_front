@@ -1,0 +1,22 @@
+span {
+    background-color: rgb(13, 202, 240);
+}
+
+.dates {
+    background-color: rgb(13, 202, 240);
+    font-weight: bold;
+}
+
+tr:hover td {
+    color: rgb(13, 202, 240);
+}
+
+.icono:hover {
+    border-color: transparent;
+    background-color: transparent;
+    color: rgb(13, 202, 240);
+}
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 5s;
+}

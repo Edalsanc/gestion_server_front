@@ -1,0 +1,167 @@
+<header>
+    <app-header></app-header>
+</header>
+
+
+<div class="px-5 mt-5">
+
+    <form>
+
+
+
+
+
+
+        <!--Sesion 4-->
+        <div class="row">
+
+            <!--Col 1-->
+            <div class="col-sm-5 col-md-3 text-start mt-2">
+
+                <h2 class="animate__animated animate__fadeInDown">Agregar servidores</h2>
+                <h6 class="text-muted animate__animated animate__fadeInDown">En esta sesion puede agregar sus servidores</h6>
+            </div>
+            <!--End Col 1-->
+
+
+
+            <!--Col 2-->
+            <div class="col-sm-5 col-md-9">
+
+                <div class="accordion" id="accordionExample">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                          
+                        </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+
+
+
+
+                                <div class="modal fade" id="modalExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <form [formGroup]="formE" (ngSubmit)="enviarE(formE.value)">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Server</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+
+
+                                                    <!--File 1-->
+                                                    <div class="row g-2">
+
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="input-group mb-3">
+                                                                <span ngxTippy data-tippy-content="Ingrese nombre del servidor" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building animate__animated animate__rubberBand"></i></span>
+                                                                <input type="text" name="server" formControlName="server" class="form-control" placeholder="Nombre del servidor" aria-label="Empresa" aria-describedby="basic-addon1">
+                                                            </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('server')?.hasError('required') && formE.get('server')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="input-group mb-3">
+                                                                <span ngxTippy data-tippy-content="Ingrese la ip" class="input-group-text" id="basic-addon1"><i class="fa-solid fa-building animate__animated animate__rubberBand"></i></span>
+                                                                <input type="text" name="ip" formControlName="ip" class="form-control" placeholder="Ingrese la ip" aria-label="Empresa" aria-describedby="basic-addon1">
+                                                            </div>
+
+                                                            <div class="text-danger px-1" *ngIf="formE.get('empresa')?.hasError('required') && formE.get('empresa')?.touched ">
+                                                                <p>Este campo es obligatorio</p>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <!--End File 1-->
+
+
+
+
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button [disabled]="formE.invalid" type="submit" class="btn btn-primary">{{(swe)?'Actualizar': 'Guardar'}}</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row g-2">
+
+
+                                    <div class="table-responsive ">
+                                        <table class="table table-dark table-hover text-center">
+                                            <thead>
+
+
+                                                <tr>
+                                                    <th scope="col">Servidor</th>
+                                                    <th scope="col">Ip</th>
+                                                    <th scope="col">Acciones</th>
+
+                                                </tr>
+
+
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let item of listaServers;let indice=index">
+                                                    <td>{{item.server}}</td>
+                                                    <td>{{item.ip}}</td>
+
+                                                    <td>
+                                                        <button (click)="editarServer(item,indice)" type="button" class="btn text-white " data-bs-toggle="modal" data-bs-target="#modalExperiencia">
+                                                        <i class="fa-solid fa-pen-to-square icono ">
+                                                            
+                                                        </i></button>
+                                                        <button (click)="eliminarServer(indice)" type="button" class="btn text-white"><i class="fa-solid fa-trash icono"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!--File 1-->
+                                <div class="row g-2 mt-2">
+                                    <div class="col-sm-6 col-md-6">
+
+                                        <!-- Button trigger modal -->
+                                        <button (click)="agregarServer()" type="button" class="btn btn-info rounded-pill fw-bold " data-bs-toggle="modal" data-bs-target="#modalExperiencia">Agregar +</button>
+
+
+                                    </div>
+                                </div>
+                                <!--End File 1-->
+                            </div>
+                            <!--End Col 2-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Sesion 4-->
+
+        <hr>
+
+
+
+
+    </form>
+</div>

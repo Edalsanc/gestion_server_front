@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <div class="col-sm-6 text-black login-seccion">
+
+
+
+                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+                    <div class="login-box">
+                        <div class="card shadow p-3 mb-5  rounded">
+                            <div class="card-body">
+
+                                <form>
+                                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start ">
+                                        <p class="lead fw-normal mb-0 me-4 text-white">Sign in</p>
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle social">
+                                          <i class="fab fa-facebook-f"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle social">
+                                          <i class="fab fa-twitter"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-info btn-floating mx-1 rounded-circle social">
+                                          <i class="fab fa-linkedin-in"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="form-floating mt-5 mb-3 user">
+                                        <input name="nom_usuario" [(ngModel)]="user.nom_usuario" type="email" class="form-control " id="floatingInput" placeholder="user">
+                                        <label for="floatingInput">Usuario</label>
+                                    </div>
+                                    <div class="form-floating user">
+                                        <input name="clave" [(ngModel)]="user.clave" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Contraseña</label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <a (click)="logIn()" type="button">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span> Enviar
+                                        </a>
+                                    </div>
+                                    <div class="d-flex justify-content-center text-center">
+                                        <p><a [routerLink]="['/registro']" [routerLinkActive]="['is-active']">¿No tienes cuenta? Registrate aquí</a>
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-sm-6 text-black login-seccion2">
+
+            </div>
+        </div>
+    </div>
+</section>
